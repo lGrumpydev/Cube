@@ -45,11 +45,9 @@
             <div class="card" >
                 <div class="card-header">
                     <article class="post" data-postid="{{ $post->id }}">
-                        <div class="card-header">
-                            <span style="color:#f7f7f7">Posted by</span> <a style="text-decoration: none" href="/users/{{ $post->user->id}}">{{ $post->user->first_name}}</a> <span style="color:#f7f7f7">on {{ $post->created_at}}</span>
-                        </div>
-
+                            
                             <p style="color:#f7f7f7"> {{ $post->body }}</p>
+                            <span style="color:#f7f7f7">Posted by</span> <a style="text-decoration: none" href="/users/{{ $post->user->id}}">{{ $post->user->first_name}}</a> <span style="color:#f7f7f7">on {{ $post->created_at}}</span>
 
                         <div class="interaction">
                             <a style="text-decoration: none" href="#" class="like">{{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? '💔' : '❤️' : '❤️' }}</a> 
